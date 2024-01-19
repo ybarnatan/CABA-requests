@@ -67,12 +67,7 @@ texto_custom = list( theme(
 
 ``` r
 llamadas = suaci %>% group_by(BARRIO, TIPO) %>%  dplyr::summarise(calls = n())
-```
 
-    ## `summarise()` has grouped output by 'BARRIO'. You can override using the
-    ## `.groups` argument.
-
-``` r
 LLAMADAS.X.BARRIO = ggplot(llamadas) +
     geom_col(aes(x = BARRIO, y = calls, fill= TIPO)) +
     coord_flip()+
@@ -98,17 +93,7 @@ seem to be the least reason for reaching out.
 
 ``` r
 llamadas.pobl = left_join(llamadas, poblacion)
-```
-
-    ## Joining with `by = join_by(BARRIO)`
-
-``` r
 barrios.dens = left_join(barrios,llamadas.pobl)
-```
-
-    ## Joining with `by = join_by(BARRIO)`
-
-``` r
 barrios.dens$call_dens =  barrios.dens$calls / barrios.dens$POBLACION
 ```
 
@@ -143,12 +128,7 @@ llamadas.via = suaci %>%
     group_by(BARRIO, CANAL) %>% 
     dplyr::summarise(calls = n()) %>%
     ungroup()
-```
 
-    ## `summarise()` has grouped output by 'BARRIO'. You can override using the
-    ## `.groups` argument.
-
-``` r
 llamadas.via$combinacion = paste0(llamadas.via$BARRIO,"-",llamadas.via$CANAL)
 
 # Are all combinations of neighborhood and contact method present? 
@@ -172,11 +152,6 @@ for (i in (1:nrow(missing.comb))){
 }
 
 barrios_via = left_join(barrios, llamadas.via)
-```
-
-    ## Joining with `by = join_by(BARRIO)`
-
-``` r
 barrios_via$calls =  as.numeric(barrios_via$calls)
 ```
 
