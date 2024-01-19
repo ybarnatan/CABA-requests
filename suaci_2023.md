@@ -167,11 +167,7 @@ BARRIOS.VIA = ggplot(barrios_via) +
     theme_bw() +
     texto_custom +
     theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1))
-
-BARRIOS.VIA 
 ```
-
-![](suaci_2023_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 With this latest analysis, we also assess through maps which
 communication channels are more/less requested by the residents of CABA
