@@ -12,7 +12,7 @@ The goal is to:
 
 +  Create visualizations to communicate key insights clearly
 
-📄 Full analysis and results can be found in [`suaci_2023.md`] (https://github.com/ybarnatan/CABA-requests/blob/main/suaci_2023.md).
+📄 Full analysis and results can be found in [`suaci_2023.md`](https://github.com/ybarnatan/CABA-requests/blob/main/suaci_2023.md).
 
 ---
 
